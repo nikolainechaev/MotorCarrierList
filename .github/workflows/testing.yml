@@ -1,0 +1,64 @@
+name: Playwright Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+
+      - name: Set up .NET Core
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: '8.0.3'
+
+      - name: Install dependencies for API
+        run: dotnet restore
+        working-directory: ./API/Contacts
+
+      - name: Install dependencies for UI
+        run: npm install
+        working-directory: ./UI/Contacts/
+
+      - name: Install dependencies for Tests
+        run: npm install
+        working-directory: ./Tests
+
+      - name: Build UI
+        run: npm run build
+        working-directory: ./UI/Contacts/
+
+      - name: Start API
+        run: dotnet watch
+        working-directory: ./API/Contacts
+        continue-on-error: true
+        timeout-minutes: 2
+
+      - name: Start UI
+        run: npm run start
+        working-directory: ./UI
+        continue-on-error: true
+        timeout-minutes: 2
+
+      - name: Wait for API and UI to be ready
+        run: |
+          while ! curl -s http://localhost:4200 > /dev/null; do sleep 1; done
+          while ! curl -s http://localhost:4200 > /dev/null; do sleep 1; done
+
+      - name: Run Playwright tests
+        run: npm run regression
+        working-directory: ./Tests/UI-tests
