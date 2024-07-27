@@ -26,6 +26,9 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
+      - name: Install Angular CLI
+        run: npm install -g @angular/cli
+
       - name: Install dependencies for API
         run: dotnet restore
         working-directory: ./API/Contacts
@@ -39,21 +42,26 @@ jobs:
         working-directory: ./Tests
 
       - name: Start API
-        run: dotnet watch
-        working-directory: ./API/Contacts/
-        continue-on-error: true
-        timeout-minutes: 2
+        run: |
+          nohup dotnet watch run --project ./API/Contacts > api.log 2>&1 &
+        working-directory: ./API/Contacts
 
       - name: Start UI
-        run: ng serve
-        working-directory: ./UI/Contacts/
-        continue-on-error: true
-        timeout-minutes: 2
+        run: |
+          nohup ng serve > ui.log 2>&1 &
+        working-directory: ./UI/Contacts
 
-      # - name: Wait for API and UI to be ready
-      #   run: |
-      #     while ! curl -s http://localhost:4200 > /dev/null; do sleep 1; done
+      - name: Wait for API and UI to be ready
+        run: |
+          echo "Waiting for API to be ready..."
+          while ! curl -s http://localhost:5070 > /dev/null; do sleep 1; done
+          echo "Waiting for UI to be ready..."
+          while ! curl -s http://localhost:4200 > /dev/null; do sleep 1; done
+
+      - name: Install Playwright browsers
+        run: npx playwright install
+        working-directory: ./Tests
 
       - name: Run Playwright tests
         run: npm run regression
-        working-directory: ./Tests/UI-tests
+        working-directory: ./Tests/
