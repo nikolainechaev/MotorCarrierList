@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "regression": "npx playwright test UI-tests/ui-tests.spec.js --headed"
+    "regression": "npx playwright test UI-tests/ui-tests.spec.js"
   },
   "keywords": [],
   "author": "",
