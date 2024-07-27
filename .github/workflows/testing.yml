@@ -40,19 +40,19 @@ jobs:
 
       - name: Start API
         run: dotnet watch
-        working-directory: ./API/Contacts
+        working-directory: ./API/Contacts/
         continue-on-error: true
         timeout-minutes: 2
 
       - name: Start UI
         run: ng serve
-        working-directory: ./UI/Contacts
+        working-directory: ./UI/Contacts/
         continue-on-error: true
         timeout-minutes: 2
 
-      - name: Wait for API and UI to be ready
-        run: |
-          while ! curl -s http://localhost:4200 > /dev/null; do sleep 1; done
+      # - name: Wait for API and UI to be ready
+      #   run: |
+      #     while ! curl -s http://localhost:4200 > /dev/null; do sleep 1; done
 
       - name: Run Playwright tests
         run: npm run regression
