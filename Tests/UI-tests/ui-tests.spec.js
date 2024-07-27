@@ -10,6 +10,6 @@ test.describe('Assert visibility of headers', () => {
     // create locator
     const motorCarrierHeader = page.locator('//form/h1')
     // Make sure header has correct text.
-    await expect(motorCarrierHeader).toHaveText('Motor! Carriers')
+    await expect(motorCarrierHeader).toHaveText('Motor Carriers')
   })
 })
