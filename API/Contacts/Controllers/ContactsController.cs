@@ -47,5 +47,24 @@ namespace Contacts.Controllers
 			}
 			return Ok();
 		}
+		[HttpPut]
+		[Route("{id:guid}")]
+		public IActionResult ChangeContact(Guid id, UpdateContactRequestDTO request)
+		{
+			var contact = dbContext.Contacts.Find(id);
+			if (contact is null)
+			{
+				return NotFound();
+			}
+
+			contact.Name = request.Name;
+			contact.Email = request.Email;
+			contact.Phone = request.Phone;
+			contact.Favorite = request.Favorite;
+
+			dbContext.SaveChanges();
+
+			return Ok(contact);
+		}
 	}
 }
