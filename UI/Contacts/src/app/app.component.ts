@@ -18,6 +18,7 @@ export class AppComponent {
   http = inject(HttpClient);
   contactsForm = new FormGroup({
     name: new FormControl<string>(''),
+    company: new FormControl<string>(''),
     email: new FormControl<string | null>(null),
     phone: new FormControl<string>(''),
     favorite: new FormControl<boolean>(false)
@@ -29,6 +30,7 @@ export class AppComponent {
   onFormSubmit() {
     const contactRequest = {
       name: this.contactsForm.value.name,
+      company: this.contactsForm.value.company,
       email: this.contactsForm.value.email,
       phone: this.contactsForm.value.phone,
       favorite: this.contactsForm.value.favorite
@@ -60,6 +62,7 @@ export class AppComponent {
   onEdit(contact: Contact) {
     this.contactsForm.patchValue({
       name: contact.name,
+      company: contact.company,
       email: contact.email,
       phone: contact.phone,
       favorite: contact.favorite

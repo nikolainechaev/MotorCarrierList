@@ -7,6 +7,10 @@
       <input type="text" class='w-full p-2 border-2 rounded-sm mt-2' formControlName='name'>
     </div>
     <div class='mt-2'>
+      <label for="name" class='font-bold'>Company</label>
+      <input type="text" class='w-full p-2 border-2 rounded-sm mt-2' formControlName='company'>
+    </div>
+    <div class='mt-2'>
       <label for="email" class='font-bold'>Email</label>
       <input type="email" class='w-full p-2 border-2 rounded-sm mt-2' formControlName='email'>
     </div>
@@ -34,6 +38,7 @@
           @for (item of contacts; track $index) {
             <li class='p-2 bg-slate-100 border-b-2 border-slate-200'>
               <span class='font-light text-3xl'>{{ item.name }}</span>
+              <span class='text-1xl block'>{{ item.company }}</span>
               <div class='flex gap-10 mt-4'>
                 <span class='flex items-center'>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">

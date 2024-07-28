@@ -25,6 +25,7 @@ namespace Contacts.Controllers
 			{
 				Id = Guid.NewGuid(),
 				Name = request.Name,
+				Company = request.Company,
 				Email = request.Email,
 				Phone = request.Phone,
 				Favorite = request.Favorite
@@ -58,6 +59,7 @@ namespace Contacts.Controllers
 			}
 
 			contact.Name = request.Name;
+			contact.Company = request.Company;
 			contact.Email = request.Email;
 			contact.Phone = request.Phone;
 			contact.Favorite = request.Favorite;
