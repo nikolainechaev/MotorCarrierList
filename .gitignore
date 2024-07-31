@@ -1,1 +1,14 @@
-/obj
+# Ignore .NET build folders
+bin/
+obj/
+
+# Ignore Angular build output
+dist/
+node_modules/
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+
+# Ignore environment variables files
+.env
