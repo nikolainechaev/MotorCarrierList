@@ -2,7 +2,7 @@
 
 public class Contact
 {
-	public Guid Id { get; set; }
+	public int Id { get; set; }
 	public required string Name { get; set; }
 	public required string Company { get; set; }
 	public string? Email { get; set; }

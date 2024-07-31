@@ -8,7 +8,7 @@ builder.Services.AddControllersWithViews();
 
 // Configure SQLite database
 builder.Services.AddDbContext<ContactsDbContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 

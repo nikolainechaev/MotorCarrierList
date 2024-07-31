@@ -23,7 +23,7 @@ namespace Contacts.Controllers
 		{
 			var domainModelContact = new Contact
 			{
-				Id = Guid.NewGuid(),
+				// Id = int,
 				Name = request.Name,
 				Company = request.Company,
 				Email = request.Email,
@@ -36,9 +36,9 @@ namespace Contacts.Controllers
 			return Ok(domainModelContact);
 		}
 		[HttpDelete]
-		[Route("{id:guid}")]
+		[Route("{id:int}")]
 
-		public IActionResult DeleteContact(Guid id)
+		public IActionResult DeleteContact(int id)
 		{
 			var contact = dbContext.Contacts.Find(id);
 			if (contact is not null)
@@ -49,8 +49,8 @@ namespace Contacts.Controllers
 			return Ok();
 		}
 		[HttpPut]
-		[Route("{id:guid}")]
-		public IActionResult ChangeContact(Guid id, UpdateContactRequestDTO request)
+		[Route("{id:int}")]
+		public IActionResult ChangeContact(int id, UpdateContactRequestDTO request)
 		{
 			var contact = dbContext.Contacts.Find(id);
 			if (contact is null)
