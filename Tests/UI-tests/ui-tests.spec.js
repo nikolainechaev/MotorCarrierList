@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test'
-const MainForm = require('./pages/main-form.spec.js')
+const MainForm = require('./pages/main-form.js')
 
 test.beforeEach(async ({ page }) => {
   await page.goto('http://localhost:4200/')
