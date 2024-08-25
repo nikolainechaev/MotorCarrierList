@@ -1,13 +1,21 @@
-# Full-Stack Development and CI/CD Integration
+# :truck: Motor Carrier List :articulated_lorry:
 
-This project showcases my skills in backend and frontend development, cloud integration using CI/CD pipelines, and Azure SQL database. It also includes comprehensive UI and API integration tests to ensure end-to-end functionality.
+## **Description**
 
-## Overview
-- Backend Development: Created a RESTful API using .NET Core.
-- Frontend Development: Built a user interface using Angular.
-- Cloud Integration: Implemented CI/CD pipelines with GitHub Actions.
-- Database Integration: Connected directly to an Azure SQL database for data persistence.
-- UI and API Testing: Conducted end-to-end testing using Playwright.
+This app is designed to assist freight brokers by providing a convenient way to manage and record information about representatives from various carriers. It streamlines the process of keeping track of carrier contacts, making it easier for brokers to organize, update, and access important details about their business partners.
+
+## **Full-Stack Development with Azure SQL, CI/CD, and Secure Secret Management**
+
+This project demonstrates my expertise in full-stack development, focusing on seamless integration of cloud technologies using CI/CD pipelines, secure secret management with GitHub Secrets, and robust data management with Azure SQL Database. It includes both UI and API tests to ensure end-to-end quality and functionality.
+
+## **Overview**
+
+- **Backend**: Created a RESTful API using .NET Core.
+- **Frontend**: Built a user interface using Angular.
+- **Cloud Integration**: Implemented CI/CD pipelines with GitHub Actions.
+- **Database Integration**: Connected directly to an Azure SQL database for data persistence.
+- **UI and API Testing**: Conducted end-to-end testing using Playwright.
+
 
 
 
