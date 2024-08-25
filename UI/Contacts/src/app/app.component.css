@@ -1,0 +1,148 @@
+
+.flex {
+	display: flex;
+}
+
+.h-screen {
+	height: 100vh;
+}
+
+/* Width settings */
+.width-50 {
+	width: 50%;
+}
+
+/* Padding and margin */
+.px-4 {
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+.mt-2 {
+	margin-top: 0.5rem;
+}
+
+.ms-2 {
+	margin-left: 0.5rem;
+}
+
+.py-10 {
+	padding-top: 2.5rem;
+	padding-bottom: 2.5rem;
+}
+
+/* Text styles */
+.font-extrabold {
+	font-weight: 800;
+}
+
+.font-bold {
+	font-weight: bold;
+}
+
+.font-light {
+	font-weight: 300;
+}
+
+.text-5x1 {
+	font-size: 3rem;
+}
+
+.text-3xl {
+	font-size: 2rem;
+}
+
+.text-1xl {
+	font-size: 1rem;
+}
+
+/* Border and rounding */
+.border-2 {
+	border-width: 2px;
+}
+
+.rounded-sm {
+	border-radius: 0.125rem;
+}
+
+.border-b-2 {
+	border-bottom-width: 2px;
+}
+
+/* Background and text color */
+.bg-slate-800 {
+	background-color: #1e293b;
+}
+
+.bg-slate-50 {
+	background-color: #f8fafc;
+}
+
+.bg-slate-100 {
+	background-color: #f1f5f9;
+}
+
+.bg-emerald-400 {
+	background-color: #34d399;
+}
+
+.text-white {
+	color: white;
+}
+
+.text-dark {
+	color: black;
+}
+
+.text-red-500 {
+	color: #ef4444;
+}
+
+.text-blue-500 {
+	color: #3b82f6;
+}
+
+/* Utility classes */
+.w-full {
+	width: 100%;
+}
+
+.p-2 {
+	padding: 0.5rem;
+}
+
+.overflow-auto {
+	overflow: auto;
+}
+
+.flex {
+	display: flex;
+}
+
+.items-center {
+	align-items: center;
+}
+
+.gap-10 {
+	gap: 2.5rem;
+}
+
+.mt-4 {
+	margin-top: 1rem;
+}
+
+.w-6 {
+	width: 1.5rem;
+}
+
+.h-6 {
+	height: 1.5rem;
+}
+
+.cursor-pointer {
+	cursor: pointer;
+}
+
+.rounded-sm {
+	border-radius: 0.125rem;
+}
