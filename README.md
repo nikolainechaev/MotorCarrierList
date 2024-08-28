@@ -6,7 +6,7 @@ This app is designed to assist freight brokers by providing a convenient way to 
 
 ## **Full-Stack Development with Azure SQL, CI/CD, and Secret Management**
 
-This project demonstrates my expertise in full-stack development, focusing on seamless integration of cloud technologies using CI/CD pipelines, secure secret management with GitHub Secrets, and robust data management with Azure SQL Database. It includes both UI and API tests to ensure end-to-end quality and functionality.
+This project demonstrates my expertise in full-stack development, focusing on seamless integration of cloud technologies using CI/CD pipelines, secret management with GitHub Secrets, and robust data management with Azure SQL Database. It includes both UI and API tests to ensure end-to-end quality and functionality.
 
 ## **Overview**
 
